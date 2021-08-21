@@ -1,0 +1,135 @@
+---
+title: "eda on stock market"
+output: html_document
+---
+```{r}
+df = read.csv("indexdata22.csv")
+head(df)
+```
+
+```{r}
+df=read.csv('indexdata22.csv')
+head(df)
+
+```
+
+```{r}
+class(df)
+
+```
+
+
+```{r}
+class(df$High)
+class(dimnames(df))
+head(df)
+head(df,n=3)
+tail(df)
+tail(df,n=3)
+summary(df)
+summary(df$High)
+mean(df$High)
+median(df$High)
+
+df1=df
+df1[is.na(df1)]=0
+head(df1)
+
+mode(df1$High)
+var(df1$High)
+sd(df1$High)
+var(df$High, df$Close)
+str(df1)
+head(structure(df1))
+ls.str(df1)
+ls.str(pattern = 'df1')
+names(df1)
+row.names(df)
+dimnames(df)
+length(df)
+head(df$High)
+df$High[3]
+df$High[1:5]
+tdf=attach(df)
+tdf
+max(df$High)
+max(df$low)
+min(df$High)
+min(df$Low)
+head(stack(df))
+head(sort(df$High))
+head(sort(df$Low))
+
+
+```
+
+```{r}
+head(order(df$High))
+head(rank(df$High),n=10)
+df[3,3]
+df[3,1:5]
+head(as.matrix(df))
+head(rbind(df))
+head(cbind(df))
+head(cumsum(df$High))
+head(cummax(df$Low))
+head(cummin(df$High))
+head(cumprod(df$High))
+table(df$high)
+is.data.frame(df)
+is.table(df)
+if(class(df)=='data.frame')TRUE else FALSE
+seq_along(df)
+head(rnorm(df$High, mean = 0, sd = 1))
+qqplot(df$High,df$Low)
+qqp = qqplot(df$High, df$Low)
+plot(df$High)
+plot(df$Low)
+plot(df$High,df$Low)
+plot(df$High ~ df$Low, data = df)
+plot(df$Low ~ df$Close, data = df)
+plot(df$High ~ df$Low)
+plot(df$High, horizontal = T)
+title(xlab = 'High scores')
+library(dplyr)
+table(df$Close)
+table(df$High)
+table(df$Low)
+tapply(df$High, df$Low, FUN = mean)
+tapply(df$High, df$Low, FUN = var)
+tapply(df$High, df$Low, FUN = mean)
+tapply(df$High, df$Low, FUN = var)
+
+tapply(df$High, df$Low, FUN = mean)
+aggregate(df[ , 10:11], by = list(df$High), FUN = mean)
+aggregate(df[ , 10:11], by = list(df$High_setting), FUN = mean)
+aggregate(df[ , 10:11], by = list(df$High_type), FUN = mean)
+aggregate(df[ , 10:11], by = list(df$High_method), FUN = mean)
+aggregate(df[ , 10:11], by = list(df$High), FUN = mean)
+aggregate(cbind(df$High, df$Low), data = df, by = list(df$Close), FUN = mean)
+aggregate(df$High ~ df$Low, data = df, FUN = mean)
+aggregate(df$High ~ df$Low * df$Low_type, data = df, FUN = mean)
+head(na.omit(df))
+objects(df)
+ls(df)
+cor.test(~ df$High + df$Low, data = df)
+coef(dflm)
+confint(dflm)
+head(fitted(dflm))
+head(residuals(dflm))
+formula(dflm)
+dflm$High
+head(fitted(dflm))
+head(residuals(dflm))
+formula(dflm)
+dflm$High
+formula(df)
+df.m = apply(df[,10:11], 2, mean)
+df.m
+df.m = apply(df[,10:11], 2, mean)
+df.m
+df.s = apply(df[,10:11], 2, sum)
+df.s
+
+```
+
